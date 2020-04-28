@@ -59,7 +59,7 @@ class Game {
         index = index + 1 ;
 
         //position the runners a little away from each other in x direction
-        y = y + 200;
+        y = y + 100;
         //use data form the database to display the runners in y direction
         x = displayWidth - allPlayers[plr].distance;
         runners[index-1].x = x;
@@ -78,7 +78,7 @@ class Game {
     }
 
     if(keyIsDown(RIGHT_ARROW) && player.index !== null){
-      player.distance +=10
+      player.distance -=10
       player.update();
     }
 
