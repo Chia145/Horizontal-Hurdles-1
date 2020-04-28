@@ -29,10 +29,10 @@ class Game {
       form.display();
     }
 
-    runner1 = createSprite(100,200);
-    runner2 = createSprite(300,200);
-    runner3 = createSprite(500,200);
-    runner4 = createSprite(700,200);
+    runner1 = createSprite(100,200,50,50);
+    runner2 = createSprite(300,200,50,50);
+    runner3 = createSprite(500,200,50,50);
+    runner4 = createSprite(700,200,50,50);
     runners = [runner1, runner2, runner3, runner4];
   }
 
