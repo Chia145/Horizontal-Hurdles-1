@@ -52,7 +52,7 @@ class Game {
 
       //x and y position of the runners
       var x;
-      var y = 75 ;
+      var y = 15 ;
 
       for(var plr in allPlayers){
         //add 1 to the index for every loop
@@ -78,7 +78,7 @@ class Game {
     }
 
     if(keyIsDown(RIGHT_ARROW) && player.index !== null){
-      player.distance +=10
+      player.distance-=10
       player.update();
     }
 
