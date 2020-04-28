@@ -43,7 +43,7 @@ class Game {
     
     if(allPlayers !== undefined){
     //  background(rgb(198,135,103));
-      image(track, 0,-displayHeight/20+10,displayWidth*5, displayHeight);
+      image(track, 0,-displayHeight,displayWidth*5, displayHeight/10);
       
       //var display_position = 100;
       
@@ -81,8 +81,12 @@ class Game {
       player.distance-=10
       player.update();
     }
+     if(keyIsDown(LEFT_ARROW) && player.index !== null){
+      player.distance+=10
+      player.update();
+    }
 
-    if(player.distance > 3860){
+    if(player.distance > 5860){
       gameState = 2;
     }
    
