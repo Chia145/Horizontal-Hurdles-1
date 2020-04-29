@@ -42,25 +42,23 @@ class Game {
     Player.getPlayerInfo();
     
     if(allPlayers !== undefined){
-    //  background(rgb(198,135,103));
+   
       image(track, 0,-displayHeight,displayWidth*5, displayHeight/10);
-      
-      //var display_position = 100;
       
       //index of the array
       var index = 0;
 
       //x and y position of the runners
       var x;
-      var y = 15 ;
+      var y = 150 ;
 
       for(var plr in allPlayers){
         //add 1 to the index for every loop
         index = index + 1 ;
 
-        //position the runners a little away from each other in x direction
+        //position the runners a little away from each other in y direction
         y = y + 100;
-        //use data form the database to display the runners in y direction
+        //use data form the database to display the runners in x direction
         x = displayWidth - allPlayers[plr].distance;
         runners[index-1].x = x;
         runners[index-1].y = y;
@@ -71,8 +69,7 @@ class Game {
           camera.position.x = runners[index-1].x;
         }
        
-        //textSize(15);
-        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
+        
       }
 
     }
@@ -85,6 +82,10 @@ class Game {
       player.distance+=10
       player.update();
     }
+    if(keyIsDown(UP_ARROW) && player.index !== null){
+      player.velocityY= -4;
+    }
+    player.velocityY+=0.8;
 
     if(player.distance > 5860){
       gameState = 2;
