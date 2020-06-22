@@ -62,14 +62,20 @@ class Game {
         x = displayWidth - allPlayers[plr].distance;
         runners[index-1].x = x;
         runners[index-1].y = y;
+        
+        if(keyDown(UP_ARROW)&& player.index !== null && index === player.index){
+        runners[index-1].y -=100;
+        player.distance -=50;
+        player.distanceY -=100;
+        player.update();  
+        }
 
         if (index === player.index){
           runners[index - 1].shapeColor = "red";
           camera.position.y = displayHeight/2;
           camera.position.x = runners[index-1].x;
         }
-       
-        
+      
       }
 
     }
@@ -82,11 +88,7 @@ class Game {
       player.distance+=10
       player.update();
     }
-    if(keyIsDown(UP_ARROW) && player.index !== null){
-      player.velocityY= -4;
-    }
-    player.velocityY+=0.8;
-
+   
     if(player.distance > 5860){
       gameState = 2;
     }
