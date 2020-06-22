@@ -27,7 +27,7 @@ function setup(){
 
 
 function draw(){
-  background(0);
+  background(0,200,200);
   spawnHurdles(250);
   spawnHurdles(350);
   spawnHurdles(450);
