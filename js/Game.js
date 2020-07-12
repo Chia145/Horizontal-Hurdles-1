@@ -83,12 +83,9 @@ class Game {
       player.distance+=10
       player.update();
     }
-     if(keyDown(UP_ARROW)&& player.index !== null && index === player.index){
-        runners[index-1].y -=100;
-        player.distance -=50;
-        player.distanceY -=100;
-        player.update();  
-     }
+     if(keyIsDown(UP_ARROW && player.index !== null) ){
+        player.y=player.y-70
+      }
    
     if(player.distance > 5860){
       gameState = 2;
